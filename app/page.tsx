@@ -1,103 +1,291 @@
-import Image from "next/image";
+"use client"
 
-export default function Home() {
+import { useEffect, useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
+export default function HomePage() {
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY)
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="relative min-h-screen">
+      {/* Parallax Background */}
+      <div
+        className="fixed inset-0 w-full h-full bg-cover bg-center z-0"
+        style={{
+          backgroundImage: "url('/images/background.jpg')",
+          transform: `translateY(${scrollY * 0.7
+          }px)`,
+        }}
+      />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      {/* Content */}
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <section className="relative h-screen flex items-center justify-center">
+          <div
+            className="absolute inset-0 bg-black/60 z-0"
+            style={{
+              opacity: Math.min(0.6 + scrollY * 0.001, 0.8),
+            }}
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          <div className="container relative z-10 px-4 md:px-6 flex flex-col items-center text-center">
+            <div className="relative w-48 h-48 md:w-54 md:h-54 mb-6 overflow-hidden rounded-full border-4 border-primary">
+              <Image src="/images/profilePic.jpeg" alt="Profile Picture of Jacob Fonger" fill className="object-cover" priority />
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-4">Jacob Fonger</h1>
+            <p className="text-xl md:text-2xl text-white/80 max-w-2xl mb-8">
+              Full Stack Developer specializing in building exceptional digital experiences
+            </p>
+            <div className="flex gap-4">
+              <Button
+                asChild
+                variant="outline"
+                size="icon"
+                className="rounded-full bg-background/20 backdrop-blur-sm border-white/20 hover:bg-background/30"
+              >
+                <Link href="https://github.com/jakefongerz" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-5 w-5" />
+                  <span className="sr-only">GitHub</span>
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="icon"
+                className="rounded-full bg-background/20 backdrop-blur-sm border-white/20 hover:bg-background/30"
+              >
+                <Link href="https://www.linkedin.com/in/jacob-fonger/" target="_blank" rel="noopener noreferrer">
+                  <Linkedin className="h-5 w-5" />
+                  <span className="sr-only">LinkedIn</span>
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                size="icon"
+                className="rounded-full bg-background/20 backdrop-blur-sm border-white/20 hover:bg-background/30"
+              >
+                <Link href="mailto:jakefonger@gmail.com">
+                  <Mail className="h-5 w-5" />
+                  <span className="sr-only">Email</span>
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects & Experience Section */}
+        <section className="relative py-20 bg-background">
+          <div className="container px-4 md:px-6">
+            <Tabs defaultValue="projects" className="w-full max-w-4xl mx-auto">
+              <TabsList className="grid w-full grid-cols-2 mb-8">
+                <TabsTrigger value="projects">Projects</TabsTrigger>
+                <TabsTrigger value="experience">Experience</TabsTrigger>
+              </TabsList>
+
+              {/* Projects Tab */}
+              <TabsContent value="projects" className="space-y-8">
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {projects.map((project) => (
+                    <Link href={`/project/${project.id}`} key={project.id} className="group">
+                      <Card className="overflow-hidden h-full transition-all hover:shadow-lg">
+                        <div className="relative h-48 overflow-hidden">
+                          <Image
+                            src={project.image || "/placeholder.svg"}
+                            alt={project.title}
+                            fill
+                            className="object-cover transition-transform group-hover:scale-105"
+                          />
+                        </div>
+                        <CardHeader className="p-4">
+                          <CardTitle className="line-clamp-1">{project.title}</CardTitle>
+                          <CardDescription className="line-clamp-2">{project.description}</CardDescription>
+                        </CardHeader>
+                        <CardFooter className="p-4 pt-0 flex justify-between items-center">
+                          <div className="flex gap-2">
+                            {project.technologies.slice(0, 3).map((tech) => (
+                              <span key={tech} className="inline-block px-2 py-1 text-xs rounded-full bg-muted">
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        </CardFooter>
+                      </Card>
+                    </Link>
+                  ))}
+                </div>
+              </TabsContent>
+
+              {/* Experience Tab */}
+              <TabsContent value="experience" className="space-y-6">
+                {jobs.map((job) => (
+                  <Link href={`/job/${job.id}`} key={job.id} className="block group">
+                    <Card className="transition-all hover:shadow-md">
+                      <CardHeader>
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <CardTitle className="group-hover:text-primary transition-colors">{job.title}</CardTitle>
+                            <CardDescription className="text-base">{job.company}</CardDescription>
+                          </div>
+                          <CardDescription>{job.period}</CardDescription>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <p className="line-clamp-2 text-muted-foreground">{job.description}</p>
+                      </CardContent>
+                      <CardFooter className="flex justify-between items-center">
+                        <div className="flex gap-2">
+                          {job.skills.slice(0, 3).map((skill) => (
+                            <span key={skill} className="inline-block px-2 py-1 text-xs rounded-full bg-muted">
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </CardFooter>
+                    </Card>
+                  </Link>
+                ))}
+              </TabsContent>
+            </Tabs>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="py-6 bg-muted/50 backdrop-blur-sm">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+              <p className="text-center text-sm text-muted-foreground md:text-left">
+                © {new Date().getFullYear()} Your Name. All rights reserved.
+              </p>
+              <div className="flex gap-4">
+                <Button asChild variant="ghost" size="icon">
+                  <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+                    <Github className="h-4 w-4" />
+                    <span className="sr-only">GitHub</span>
+                  </Link>
+                </Button>
+                <Button asChild variant="ghost" size="icon">
+                  <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="h-4 w-4" />
+                    <span className="sr-only">LinkedIn</span>
+                  </Link>
+                </Button>
+                <Button asChild variant="ghost" size="icon">
+                  <Link href="mailto:your.email@example.com">
+                    <Mail className="h-4 w-4" />
+                    <span className="sr-only">Email</span>
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
-  );
+  )
 }
+
+// Sample data - replace with your own
+const projects = [
+  {
+    id: "1",
+    title: "E-commerce Platform",
+    description: "A full-featured online store with payment processing and inventory management",
+    image: "/images/project1.jpg",
+    technologies: ["React", "Node.js", "MongoDB"],
+  },
+  {
+    id: "2",
+    title: "Health & Fitness App",
+    description: "Mobile application for tracking workouts, nutrition, and health metrics",
+    image: "/images/project2.jpg",
+    technologies: ["React Native", "Firebase", "Redux"],
+  },
+  {
+    id: "3",
+    title: "Financial Dashboard",
+    description: "Interactive dashboard for visualizing and analyzing financial data",
+    image: "/images/project3.jpg",
+    technologies: ["Vue.js", "D3.js", "Express"],
+  },
+  {
+    id: "4",
+    title: "Social Media Platform",
+    description: "Community platform with real-time messaging and content sharing",
+    image: "/images/project4.jpg",
+    technologies: ["Next.js", "Socket.io", "PostgreSQL"],
+  },
+  {
+    id: "5",
+    title: "AI Content Generator",
+    description: "Tool that uses machine learning to generate marketing content",
+    image: "/images/project5.jpg",
+    technologies: ["Python", "TensorFlow", "FastAPI"],
+  },
+]
+
+const jobs = [
+  {
+    id: "1",
+    title: "Seasonal Wildland Firefighter",
+    company: "Elko County Fire Protection District",
+    period: "2023 - 2024",
+    description:
+      "Developed and communicated effective fire suppression tactics, ensuring proper execution by the crew and adjoining forces in high-risk situations.",
+    skills: ["Wildland fire suppression", "Firstaid", "Incident command"],
+  },
+  {
+    id: "2",
+    title: "Package Handler",
+    company: "FedEx Ground",
+    period: "2022 - 2024",
+    description:
+      "Worked with heavy machinery and recording devices to handle and track packages.",
+    skills: ["Team building", "Problem solving", "Time management"],
+  },
+  {
+    id: "3",
+    title: "Crew Lead",
+    company: "All My Sons Moving & Storage",
+    period: "2021 - 2021",
+    description:
+      "Directed crew members to safely and efficiently pack, load, and unload consumers’ belongings.",
+    skills: ["JavaScript", "CSS", "WordPress"],
+  },
+  {
+    id: "4",
+    title: "Junior Developer",
+    company: "Startup Ventures",
+    period: "2014 - 2016",
+    description:
+      "Assisted in building MVPs for early-stage startups, working across the full stack to deliver functional prototypes.",
+    skills: ["PHP", "jQuery", "MySQL"],
+  },
+  {
+    id: "5",
+    title: "Freelance Developer",
+    company: "Self-employed",
+    period: "2012 - 2014",
+    description:
+      "Designed and developed websites for small businesses and individuals, focusing on clean design and usability.",
+    skills: ["HTML", "CSS", "JavaScript"],
+  },
+]
+
