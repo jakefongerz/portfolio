@@ -8,6 +8,7 @@ import { useParams, useRouter } from "next/navigation"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
+import { link } from "fs"
 
 export default function ProjectPage() {
   const params = useParams()
@@ -59,7 +60,7 @@ export default function ProjectPage() {
 
       <div className="grid gap-8 lg:grid-cols-2">
         <div className="relative aspect-video overflow-hidden rounded-lg">
-          <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" priority />
+          <Image src={project.image || "/loading.svg"} alt={project.title} fill className="object-cover" priority />
         </div>
 
         <div className="space-y-6">
@@ -78,13 +79,9 @@ export default function ProjectPage() {
 
           <div className="flex gap-4">
             <Button asChild>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Live Demo
-              </Link>
             </Button>
             <Button variant="outline" asChild>
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link href={project.link} target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-4 w-4" />
                 Source Code
               </Link>
@@ -151,42 +148,39 @@ export default function ProjectPage() {
   )
 }
 
-// Sample data - replace with your own
 const projects = [
   {
     id: "1",
-    title: "E-commerce Platform",
+    title: "AnteAI: Poker Tutor",
     description: "A full-featured online store with payment processing and inventory management",
-    image: "/images/project1.jpg",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redux", "Express"],
+    image: "/images/AnteAILogo.png",
+    technologies: ["React", "Node.js", "MongoDB"],
+    link: "https://github.com/jakefongerz/AnteAI",
   },
   {
     id: "2",
-    title: "Health & Fitness App",
+    title: "MARCO KING: Nutrition Tracker",
     description: "Mobile application for tracking workouts, nutrition, and health metrics",
-    image: "/images/project2.jpg",
-    technologies: ["React Native", "Firebase", "Redux", "Chart.js", "Node.js"],
+    image: "/images/MacoKing.jpeg",
+    technologies: ["React Native", "Firebase", "Redux"],
+    link: "https://github.com/jakefongerz/macroKing",
   },
   {
     id: "3",
-    title: "Financial Dashboard",
+    title: "Zestimate Challenge",
     description: "Interactive dashboard for visualizing and analyzing financial data",
-    image: "/images/project3.jpg",
-    technologies: ["Vue.js", "D3.js", "Express", "PostgreSQL", "Tailwind CSS"],
+    image: "/images/ZestimateProject.jpeg",
+    technologies: ["Vue.js", "D3.js", "Express"],
+    link: "https://github.com/EthanDGee/ZillowZestimateErrorPrediction"
   },
   {
     id: "4",
-    title: "Social Media Platform",
-    description: "Community platform with real-time messaging and content sharing",
+    title: "jodi",
+    description: "This is not mine, just a placeholder",
     image: "/images/project4.jpg",
-    technologies: ["Next.js", "Socket.io", "PostgreSQL", "Redis", "AWS S3"],
-  },
-  {
-    id: "5",
-    title: "AI Content Generator",
-    description: "Tool that uses machine learning to generate marketing content",
-    image: "/images/project5.jpg",
-    technologies: ["Python", "TensorFlow", "FastAPI", "React", "Docker"],
-  },
+    technologies: ["Next.js", "Socket.io", "PostgreSQL"],
+    link: "https://wwwwwwwww.jodi.org/"
+    
+  }
 ]
 

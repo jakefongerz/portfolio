@@ -91,8 +91,8 @@ export default function HomePage() {
 
         {/* Projects & Experience Section */}
         <section className="relative py-20 bg-background">
-          <div className="container px-4 md:px-6">
-            <Tabs defaultValue="projects" className="w-full max-w-4xl mx-auto">
+          <div className="container px-4 md:px-6 flex items-center">
+            <Tabs defaultValue="experience" className="w-full max-w-4xl mx-auto">
               <TabsList className="grid w-full grid-cols-2 mb-8">
                 <TabsTrigger value="projects">Projects</TabsTrigger>
                 <TabsTrigger value="experience">Experience</TabsTrigger>
@@ -104,12 +104,12 @@ export default function HomePage() {
                   {projects.map((project) => (
                     <Link href={`/project/${project.id}`} key={project.id} className="group">
                       <Card className="overflow-hidden h-full transition-all hover:shadow-lg">
-                        <div className="relative h-48 overflow-hidden">
+                        <div className="relative h-56 overflow-hidden">
                           <Image
-                            src={project.image || "/placeholder.svg"}
+                            src={project.image || "/loading.svg"}
                             alt={project.title}
                             fill
-                            className="object-cover transition-transform group-hover:scale-105"
+                            className="object-cover transition-transform group-hover:scale-100"
                           />
                         </div>
                         <CardHeader className="p-4">
@@ -172,23 +172,23 @@ export default function HomePage() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
               <p className="text-center text-sm text-muted-foreground md:text-left">
-                © {new Date().getFullYear()} Your Name. All rights reserved.
+                © {new Date().getFullYear()} Jacob Fonger. All rights reserved.
               </p>
               <div className="flex gap-4">
                 <Button asChild variant="ghost" size="icon">
-                  <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://github.com/jakefongerz" target="_blank" rel="noopener noreferrer">
                     <Github className="h-4 w-4" />
                     <span className="sr-only">GitHub</span>
                   </Link>
                 </Button>
                 <Button asChild variant="ghost" size="icon">
-                  <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <Link href="https://linkedin.com/in/jacob-fonger" target="_blank" rel="noopener noreferrer">
                     <Linkedin className="h-4 w-4" />
                     <span className="sr-only">LinkedIn</span>
                   </Link>
                 </Button>
                 <Button asChild variant="ghost" size="icon">
-                  <Link href="mailto:your.email@example.com">
+                  <Link href="mailto:jakefonger@gmail.com">
                     <Mail className="h-4 w-4" />
                     <span className="sr-only">Email</span>
                   </Link>
@@ -202,43 +202,36 @@ export default function HomePage() {
   )
 }
 
-// Sample data - replace with your own
+
 const projects = [
   {
     id: "1",
-    title: "E-commerce Platform",
+    title: "AnteAI: Poker Tutor",
     description: "A full-featured online store with payment processing and inventory management",
-    image: "/images/project1.jpg",
+    image: "/images/AnteAILogo.png",
     technologies: ["React", "Node.js", "MongoDB"],
   },
   {
     id: "2",
-    title: "Health & Fitness App",
+    title: "Macro King",
     description: "Mobile application for tracking workouts, nutrition, and health metrics",
-    image: "/images/project2.jpg",
+    image: "/images/MacoKing.jpeg",
     technologies: ["React Native", "Firebase", "Redux"],
   },
   {
     id: "3",
-    title: "Financial Dashboard",
+    title: "Zestimate Challenge",
     description: "Interactive dashboard for visualizing and analyzing financial data",
-    image: "/images/project3.jpg",
+    image: "/images/ZestimateProject.jpeg",
     technologies: ["Vue.js", "D3.js", "Express"],
   },
   {
     id: "4",
     title: "Social Media Platform",
     description: "Community platform with real-time messaging and content sharing",
-    image: "/images/project4.jpg",
+    image: "/loading.svg",
     technologies: ["Next.js", "Socket.io", "PostgreSQL"],
-  },
-  {
-    id: "5",
-    title: "AI Content Generator",
-    description: "Tool that uses machine learning to generate marketing content",
-    image: "/images/project5.jpg",
-    technologies: ["Python", "TensorFlow", "FastAPI"],
-  },
+  }
 ]
 
 const jobs = [
@@ -267,7 +260,7 @@ const jobs = [
     period: "2021 - 2021",
     description:
       "Directed crew members to safely and efficiently pack, load, and unload consumers’ belongings.",
-    skills: ["JavaScript", "CSS", "WordPress"],
+    skills: ["Leadership", "clinic satisfacyion", "WordPress"],
   },
   {
     id: "4",
@@ -277,15 +270,6 @@ const jobs = [
     description:
       "Assisted in building MVPs for early-stage startups, working across the full stack to deliver functional prototypes.",
     skills: ["PHP", "jQuery", "MySQL"],
-  },
-  {
-    id: "5",
-    title: "Freelance Developer",
-    company: "Self-employed",
-    period: "2012 - 2014",
-    description:
-      "Designed and developed websites for small businesses and individuals, focusing on clean design and usability.",
-    skills: ["HTML", "CSS", "JavaScript"],
-  },
+  }
 ]
 

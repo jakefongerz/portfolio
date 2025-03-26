@@ -130,35 +130,33 @@ export default function JobPage() {
     </div>
   )
 }
-
-// Sample data - replace with your own
 const jobs = [
   {
     id: "1",
-    title: "Senior Frontend Developer",
-    company: "Tech Innovations Inc.",
-    period: "2021 - Present",
+    title: "Seasonal Wildland Firefighter",
+    company: "Elko County Fire Protection District",
+    period: "2023 - 2024",
     description:
-      "Led the development of the company's flagship SaaS product, improving performance by 40% and implementing a new design system.",
-    skills: ["React", "TypeScript", "GraphQL", "Next.js", "Tailwind CSS"],
+      "Developed and communicated effective fire suppression tactics, ensuring proper execution by the crew and adjoining forces in high-risk situations.",
+    skills: ["Wildland fire suppression", "Firstaid", "Incident command"],
   },
   {
     id: "2",
-    title: "Full Stack Developer",
-    company: "Digital Solutions Ltd.",
-    period: "2018 - 2021",
+    title: "Package Handler",
+    company: "FedEx Ground",
+    period: "2022 - 2024",
     description:
-      "Developed and maintained multiple client projects, from e-commerce platforms to custom CMS solutions.",
-    skills: ["Node.js", "React", "MongoDB", "Express", "Redux"],
+      "Worked with heavy machinery and recording devices to handle and track packages.",
+    skills: ["Team building", "Problem solving", "Time management"],
   },
   {
     id: "3",
-    title: "Web Developer",
-    company: "Creative Agency",
-    period: "2016 - 2018",
+    title: "Crew Lead",
+    company: "All My Sons Moving & Storage",
+    period: "2021 - 2021",
     description:
-      "Created responsive websites and interactive experiences for various high-profile clients in the entertainment industry.",
-    skills: ["JavaScript", "CSS", "WordPress", "PHP", "jQuery"],
+      "Directed crew members to safely and efficiently pack, load, and unload consumers’ belongings.",
+    skills: ["Leadership", "clinic satisfacyion", "WordPress"],
   },
   {
     id: "4",
@@ -167,16 +165,6 @@ const jobs = [
     period: "2014 - 2016",
     description:
       "Assisted in building MVPs for early-stage startups, working across the full stack to deliver functional prototypes.",
-    skills: ["PHP", "jQuery", "MySQL", "HTML", "CSS"],
-  },
-  {
-    id: "5",
-    title: "Freelance Developer",
-    company: "Self-employed",
-    period: "2012 - 2014",
-    description:
-      "Designed and developed websites for small businesses and individuals, focusing on clean design and usability.",
-    skills: ["HTML", "CSS", "JavaScript", "WordPress", "Photoshop"],
-  },
+    skills: ["PHP", "jQuery", "MySQL"],
+  }
 ]
-
