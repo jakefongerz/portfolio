@@ -8,8 +8,8 @@ import { useParams, useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
-export default function JobPage() {
-  const params = useParams()
+export default async function JobPage() {
+  const params = await useParams()
   const router = useRouter()
   const [job, setJob] = useState<any>(null)
   const [loading, setLoading] = useState(true)
@@ -155,7 +155,7 @@ const jobs = [
     company: "All My Sons Moving & Storage",
     period: "2021 - 2021",
     description:
-      "Directed crew members to safely and efficiently pack, load, and unload consumers’ belongings.",
+      "Directed crew members to safely and efficiently pack, load, and unload consumers belongings.",
     skills: ["Leadership", "clinic satisfacyion", "WordPress"],
   },
   {

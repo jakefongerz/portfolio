@@ -10,8 +10,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { link } from "fs"
 
-export default function ProjectPage() {
-  const params = useParams()
+export default async function ProjectPage() {
+  const params = await useParams()
   const router = useRouter()
   const [project, setProject] = useState<any>(null)
   const [loading, setLoading] = useState(true)

@@ -259,7 +259,7 @@ const jobs = [
     company: "All My Sons Moving & Storage",
     period: "2021 - 2021",
     description:
-      "Directed crew members to safely and efficiently pack, load, and unload consumers’ belongings.",
+      "Directed crew members to safely and efficiently pack, load, and unload consumers\' belongings.",
     skills: ["Leadership", "clinic satisfacyion", "WordPress"],
   },
   {
