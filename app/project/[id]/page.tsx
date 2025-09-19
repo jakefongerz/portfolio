@@ -94,55 +94,9 @@ export default  function ProjectPage() {
         <h2 className="text-2xl font-bold">Project Details</h2>
 
         <div className="prose max-w-none dark:prose-invert">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl
-            aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl
-            aliquam nisl, eget aliquam nisl nisl sit amet nisl.
-          </p>
-          <p>
-            Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed
-            euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eget aliquam nisl nisl sit amet nisl.
-          </p>
-          <h3>Challenges</h3>
-          <ul>
-            <li>Challenge 1: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            <li>Challenge 2: Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl.</li>
-            <li>Challenge 3: Eget aliquam nisl nisl sit amet nisl.</li>
-          </ul>
-          <h3>Solutions</h3>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nisl nisl
-            aliquam nisl, eget aliquam nisl nisl sit amet nisl. Sed euismod, nisl vel ultricies lacinia, nisl nisl
-            aliquam nisl, eget aliquam nisl nisl sit amet nisl.
-          </p>
+          <p>{project.details || "Please See Git Repo for more information"}</p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="font-medium mb-2">Key Feature 1</h3>
-              <p className="text-sm text-muted-foreground">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="font-medium mb-2">Key Feature 2</h3>
-              <p className="text-sm text-muted-foreground">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-6">
-              <h3 className="font-medium mb-2">Key Feature 3</h3>
-              <p className="text-sm text-muted-foreground">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
       </div>
     </div>
   )
@@ -152,35 +106,47 @@ const projects = [
   {
     id: "1",
     title: "AnteAI: Poker Tutor",
-    description: "A full-featured online store with payment processing and inventory management",
+    description: "Developed an interactive AI-powered poker tutor using Python and OpenAI’s API to teach foundational concepts such as hand rankings and strategy.",
     image: "/images/AnteAILogo.png",
-    technologies: ["React", "Node.js", "MongoDB"],
+    technologies: ["Artifial Intelligence", "Command-line", "OpenAI API"],
     link: "https://github.com/jakefongerz/AnteAI",
+    details: "AnteAI helps beginners learn how to think through their decisions in poker. This prototype runs in the command line with a simple user interface. Poker is a game of skill, requiring an understanding of probability, game theory, and psychology. Many beginners struggle to make optimal decisions because they lack feedback on their gameplay. AnteAI aims to give players that crucial feedback. AnteAI has 3 set lessons: Poker Basics & Rules, Starting Hand Selection, and Pot Odds & Equity. Each lesson is broken down into sub lessons that incorporate both multiple choice questions and open ended questions. Outside of the lessons, AnteAI has practice scenarios to help with in-game decisions and SideKick for asking AnteAI questions about poker. "
   },
   {
     id: "2",
-    title: "MARCO KING: Nutrition Tracker",
-    description: "Mobile application for tracking workouts, nutrition, and health metrics",
-    image: "/images/MacoKing.jpeg",
-    technologies: ["React Native", "Firebase", "Redux"],
-    link: "https://github.com/jakefongerz/macroKing",
+    title: "Fong Dong Fitness App",
+    description: "Mobile application for tracking workouts.",
+    image: "/images/FongDongFitness.png",
+    technologies: ["MongoDB", "React", "Express"],
+    link: "https://github.com/jakefongerz/FongDong",
+    details: ""
   },
   {
     id: "3",
     title: "Zestimate Challenge",
-    description: "Interactive dashboard for visualizing and analyzing financial data",
+    description: "This project is based on the Zillow Prize Kaggle competition, where participants aim to improve the accuracy of Zillow's Zestimate® algorithm for predicting home values.",
     image: "/images/ZestimateProject.jpeg",
-    technologies: ["Vue.js", "D3.js", "Express"],
-    link: "https://github.com/EthanDGee/ZillowZestimateErrorPrediction"
+    technologies: ["Machine Learning", "Data Science", "Express"],
+    link: "https://github.com/EthanDGee/ZillowZestimateErrorPrediction",
+    details: ""
   },
   {
     id: "4",
-    title: "jodi",
-    description: "This is not mine, just a placeholder",
-    image: "/images/project4.jpg",
-    technologies: ["Next.js", "Socket.io", "PostgreSQL"],
-    link: "https://wwwwwwwww.jodi.org/"
-    
-  }
+    title: "Spy Chat",
+    description: "A real-time encrypted messaging app using React, TypeScript, Express, and Socket.IO, implementing end-to-end encryption with user-supplied passphrases for secure communication.",
+    image: "/images/spyChat.png",
+    technologies: ["React", "Socket.io", "TypeScript"],
+    link: "https://github.com/jakefongerz/spyChat",
+    details: "Messages are encrypted with a passphrase before being sent, and recipients must enter the correct passphrase to decrypt and read them. Without the correct passphrase, messages remain unreadable!",
+  },
+  {
+    id: "5",
+    title: "Your Weight In Gold",
+    description: "This project consists of a Django-powered API that provides unit conversions and a web app that calculates the worth of a user's weight in gold. It integrates a third-party API (Nasdaq Data Link) to fetch the latest gold prices.",
+    image: "/images/weight.png",
+    technologies: ["Django", "RESTful API", "Python"],
+    link: "https://github.com/jakefongerz/weightInGold",
+    details: "",
+  },
 ]
 

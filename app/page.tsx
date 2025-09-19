@@ -88,10 +88,12 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
+        
+       
         {/* Projects & Experience Section */}
         <section className="relative py-20 bg-background">
-          <div className="container px-4 md:px-6 flex items-center">
+
+          <div className="container mx-auto px-4 md:px-6 flex items-center">
             <Tabs defaultValue="experience" className="w-full max-w-4xl mx-auto">
               <TabsList className="grid w-full grid-cols-2 mb-8">
                 <TabsTrigger value="projects">Projects</TabsTrigger>
@@ -207,31 +209,38 @@ const projects = [
   {
     id: "1",
     title: "AnteAI: Poker Tutor",
-    description: "A full-featured online store with payment processing and inventory management",
+    description: "Developed an interactive AI-powered poker tutor using Python and OpenAI’s API to teach foundational concepts such as hand rankings and strategy.",
     image: "/images/AnteAILogo.png",
-    technologies: ["React", "Node.js", "MongoDB"],
+    technologies: ["Artifial Intelligence", "Command-line", "OpenAI API"],
   },
   {
     id: "2",
-    title: "Macro King",
-    description: "Mobile application for tracking workouts, nutrition, and health metrics",
-    image: "/images/MacoKing.jpeg",
-    technologies: ["React Native", "Firebase", "Redux"],
+    title: "Fong Dong Fitness App",
+    description: "Mobile application for tracking workouts.",
+    image: "/images/FongDongFitness.png",
+    technologies: ["MongoDB", "React", "Express"],
   },
   {
     id: "3",
     title: "Zestimate Challenge",
-    description: "Interactive dashboard for visualizing and analyzing financial data",
+    description: "This project is based on the Zillow Prize Kaggle competition, where participants aim to improve the accuracy of Zillow's Zestimate® algorithm for predicting home values.",
     image: "/images/ZestimateProject.jpeg",
-    technologies: ["Vue.js", "D3.js", "Express"],
+    technologies: ["Machine Learning", "Data Science", "Express"],
   },
   {
     id: "4",
-    title: "Social Media Platform",
-    description: "Community platform with real-time messaging and content sharing",
-    image: "/loading.svg",
-    technologies: ["Next.js", "Socket.io", "PostgreSQL"],
-  }
+    title: "Spy Chat",
+    description: "A real-time encrypted messaging app using React, TypeScript, Express, and Socket.IO, implementing end-to-end encryption with user-supplied passphrases for secure communication.",
+    image: "/images/spyChat.png",
+    technologies: ["React", "Socket.io", "TypeScript"],
+  },
+  {
+    id: "5",
+    title: "Your Weight In Gold",
+    description: "This project consists of a Django-powered API that provides unit conversions and a web app that calculates the worth of a user's weight in gold. It integrates a third-party API (Nasdaq Data Link) to fetch the latest gold prices.",
+    image: "/images/weight.png",
+    technologies: ["Django", "RESTful API", "Python"],
+  },
 ]
 
 const jobs = [
