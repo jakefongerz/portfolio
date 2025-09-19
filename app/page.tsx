@@ -236,6 +236,15 @@ const projects = [
 
 const jobs = [
   {
+    id: "0",
+    title: "Rock Climbing Instructor",
+    company: "Go West Camps",
+    period: "Summer 2025",
+    description:
+      "Instructed children in rock climbing fundamentals, emphasizing safety, techniques, and equipment use.",
+    skills: ["Safety briefing", "Team leadership", "Event planning"],
+  },
+  {
     id: "1",
     title: "Seasonal Wildland Firefighter",
     company: "Elko County Fire Protection District",
@@ -261,15 +270,6 @@ const jobs = [
     description:
       "Directed crew members to safely and efficiently pack, load, and unload consumers\' belongings.",
     skills: ["Leadership", "clinic satisfacyion", "WordPress"],
-  },
-  {
-    id: "4",
-    title: "Junior Developer",
-    company: "Startup Ventures",
-    period: "2014 - 2016",
-    description:
-      "Assisted in building MVPs for early-stage startups, working across the full stack to deliver functional prototypes.",
-    skills: ["PHP", "jQuery", "MySQL"],
   }
 ]
 

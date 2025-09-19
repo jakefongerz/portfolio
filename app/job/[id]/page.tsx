@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, Building, Calendar } from "lucide-react"
+import { ArrowLeft, Bold, Building, Calendar } from "lucide-react"
 import { useParams, useRouter } from "next/navigation"
 
 import { Button } from "@/components/ui/button"
@@ -83,44 +83,28 @@ export default function JobPage() {
           <div className="prose max-w-none dark:prose-invert">
             <p className="text-lg">{job.description}</p>
 
-            <h2>Responsibilities</h2>
+            <h2 className="text-xl font-semibold mt-6 mb-2">Responsibilities</h2>
             <ul>
-              <li>Developed and maintained web applications using {job.skills.join(", ")}.</li>
-              <li>Collaborated with cross-functional teams to define, design, and ship new features.</li>
-              <li>Ensured the technical feasibility of UI/UX designs.</li>
-              <li>Optimized applications for maximum speed and scalability.</li>
-              <li>Participated in code reviews and mentored junior developers.</li>
+              {job.responsibilities.map((resp: string, index: number) => (
+                <li key={index}>{resp}</li>
+              ))}
             </ul>
 
-            <h2>Achievements</h2>
-            <ul>
-              <li>Improved application performance by 40% through code optimization and refactoring.</li>
-              <li>Led the migration from legacy systems to modern technology stack.</li>
-              <li>Implemented automated testing that reduced bugs in production by 30%.</li>
-              <li>Developed reusable component library that accelerated development across multiple projects.</li>
-            </ul>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-medium mb-2">Key Projects</h3>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>Project 1: Redesigned the company's flagship product</li>
-                  <li>Project 2: Built internal tools for team productivity</li>
-                  <li>Project 3: Implemented new authentication system</li>
-                </ul>
+                <img src={job.image} alt={job.title} className="rounded-md" />
               </CardContent>
             </Card>
             <Card>
               <CardContent className="p-6">
-                <h3 className="font-medium mb-2">Technologies Used</h3>
+                <h3 className="font-medium mb-2">Skills</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   {job.skills.map((skill: string) => (
                     <li key={skill}>{skill}</li>
                   ))}
-                  <li>Git & GitHub</li>
-                  <li>Agile/Scrum methodology</li>
                 </ul>
               </CardContent>
             </Card>
@@ -132,6 +116,17 @@ export default function JobPage() {
 }
 const jobs = [
   {
+    id: "0",
+    title: "Rock Climbing and Mountain biking Instructor",
+    company: "Go West Camps",
+    period: "Summer 2025",
+    description:
+      "Instructed children in rock climbing fundamentals, emphasizing safety, techniques, and equipment use.",
+    skills: ["Safety briefing", "Team leadership", "Event planning"],
+    responsibilities: ["Developed and delivered rock climbing and mountain biking safety training for staff, resulting in 100% incident-free sessions.", "Led and supervised groups of up to 15 children in rock climbing and mountain biking activities, ensuring safety and engagement."],
+    image: "../images/instructor.JPG",
+  },
+  {
     id: "1",
     title: "Seasonal Wildland Firefighter",
     company: "Elko County Fire Protection District",
@@ -139,6 +134,8 @@ const jobs = [
     description:
       "Developed and communicated effective fire suppression tactics, ensuring proper execution by the crew and adjoining forces in high-risk situations.",
     skills: ["Wildland fire suppression", "Firstaid", "Incident command"],
+    responsibilities: ["Executed fire suppression tactics in high-risk situations, ensuring crew safety and effective fire containment.", "Communicated effectively with team members and command staff to coordinate firefighting efforts.", "Maintained physical fitness and readiness to perform demanding tasks in challenging environments."],
+    image: "../images/firefighter.JPEG",
   },
   {
     id: "2",
@@ -148,6 +145,8 @@ const jobs = [
     description:
       "Worked with heavy machinery and recording devices to handle and track packages.",
     skills: ["Team building", "Problem solving", "Time management"],
+    responsibilities: ["Operated heavy machinery to load and unload packages efficiently and safely.", "Utilized tracking devices to ensure accurate package handling and delivery.", "Collaborated with team members to meet daily operational goals and deadlines."],
+    image: "../images/fedex.png",
   },
   {
     id: "3",
@@ -156,15 +155,8 @@ const jobs = [
     period: "2021 - 2021",
     description:
       "Directed crew members to safely and efficiently pack, load, and unload consumers belongings.",
-    skills: ["Leadership", "clinic satisfacyion", "WordPress"],
-  },
-  {
-    id: "4",
-    title: "Junior Developer",
-    company: "Startup Ventures",
-    period: "2014 - 2016",
-    description:
-      "Assisted in building MVPs for early-stage startups, working across the full stack to deliver functional prototypes.",
-    skills: ["PHP", "jQuery", "MySQL"],
+    skills: ["Leadership", "Clinic satisfacyion", "Logistics"],
+    responsibilities: ["Led a team of movers to ensure efficient and safe packing, loading, and unloading of customer belongings.", "Coordinated logistics and scheduling to optimize moving operations and customer satisfaction.", "Provided training and support to crew members to enhance performance and teamwork."],
+    image: "../images/AMS.JPEG",
   }
 ]
