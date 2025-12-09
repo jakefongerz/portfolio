@@ -119,7 +119,7 @@ export default function HomePage() {
   </div>
 
   <div className="relative w-48 h-48 md:w-54 md:h-54 mb-6 overflow-hidden square-full border-4 border-primary">
-    <Image src="/images/hiking.JPG" alt="Mount Roberts, Alaska" fill className="object-cover" priority />
+    <Image src="/images/hiking.jpg" alt="Mount Roberts, Alaska" fill className="object-cover" priority />
   </div>
 
   <div className="relative w-48 h-48 md:w-54 md:h-54 mb-6 overflow-hidden square-full border-4 border-primary">
