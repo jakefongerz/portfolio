@@ -94,11 +94,60 @@ export default function HomePage() {
         <section className="relative py-20 bg-background">
 
           <div className="container mx-auto px-4 md:px-6 flex items-center">
-            <Tabs defaultValue="experience" className="w-full max-w-4xl mx-auto">
-              <TabsList className="grid w-full grid-cols-2 mb-8">
-                <TabsTrigger value="projects">Projects</TabsTrigger>
-                <TabsTrigger value="experience">Experience</TabsTrigger>
+            <Tabs defaultValue="bio" className="w-full max-w-4xl mx-auto">
+              <TabsList className="grid w-full grid-cols-3 mb-8">
+                <TabsTrigger value="bio">About Me</TabsTrigger>
+                <TabsTrigger value="projects">Software Projects</TabsTrigger>
+                <TabsTrigger value="experience">Work Experience</TabsTrigger>
               </TabsList>
+              {/* Bio Tab */}
+              <TabsContent value="bio" className="space-y-6">
+              <div>
+  <h2 className="text-2xl font-bold mb-4">About Me</h2>
+  <p className="text-muted-foreground mb-4">
+    I'm Jacob Fonger, a software developer with a focus on building dependable full stack systems. I work most with JavaScript, TypeScript, React, Node, and Python. I enjoy projects that mix clear UX needs with solid backend design. I like working with teams that value clean code, strong documentation, and predictable shipping cycles.
+  </p>
+  <p className="text-muted-foreground mb-4">
+    I earned my BS in Computer Science from Utah State. My background includes web apps, real-time features, database work, and systems that need stable performance. Firefighting shaped how I handle pressure. It taught me how to stay organized, lead when needed, and adapt when plans shift.
+  </p>
+  <p className="text-muted-foreground mb-4">
+   Outside work I stay active. I spend a lot of time on a mountain bike or a snowboard, and I lift weights regularly to keep a steady base for both. I like getting away on backpacking trips and the focus and risk that comes with spelunking and rock climbing. Time outside keeps me balanced and sharp when I’m back at a keyboard.
+  </p>
+<div className="flex gap-4 align-center">
+  <div className="relative w-48 h-48 md:w-54 md:h-54 mb-6 overflow-hidden square-full border-4 border-primary">
+    <Image src="/images/spelunking.JPG" alt="Thunder Shower Cave, Utah" fill className="object-cover" priority />
+  </div>
+
+  <div className="relative w-48 h-48 md:w-54 md:h-54 mb-6 overflow-hidden square-full border-4 border-primary">
+    <Image src="/images/hiking.JPG" alt="Mount Roberts, Alaska" fill className="object-cover" priority />
+  </div>
+
+  <div className="relative w-48 h-48 md:w-54 md:h-54 mb-6 overflow-hidden square-full border-4 border-primary">
+    <Image src="/images/mtb.JPG" alt="Competing in a Mountain Bike Enduro race (Ely, NV)" fill className="object-cover" priority />
+  </div>
+  <div className="relative w-48 h-48 md:w-54 md:h-54 mb-6 overflow-hidden square-full border-4 border-primary">
+    <Image src="/images/climbing.JPG" alt="Climbing in Garden of the Gods, CO" fill className="object-cover" priority />
+  </div>
+  
+</div>
+
+          
+  <h2 className="text-2xl font-bold mb-4">Subcontracting</h2>
+  <p className="text-muted-foreground mb-4">
+    I take subcontracting work and handle full stack needs across planning, development, and maintenance. I like projects that call for practical solutions, steady communication, and clear ownership.
+  </p>
+
+  <h3 className="text-xl font-bold mb-4">Home Renovation and General Contracting</h3>
+  <p className="text-muted-foreground mb-4">
+    I also work in home renovation and general contracting. I manage projects from start to finish and pay close attention to scope, structure, and quality. I’m open to subcontracting in the Colorado Springs area.
+  </p>
+
+  <p className="text-muted-foreground">
+    Reach out if you want to talk through a project.
+  </p>
+</div>
+
+              </TabsContent>
 
               {/* Projects Tab */}
               <TabsContent value="projects" className="space-y-8">
