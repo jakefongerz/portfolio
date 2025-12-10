@@ -135,7 +135,7 @@ const jobs = [
       "Developed and communicated effective fire suppression tactics, ensuring proper execution by the crew and adjoining forces in high-risk situations.",
     skills: ["Wildland fire suppression", "Firstaid", "Incident command"],
     responsibilities: ["Executed fire suppression tactics in high-risk situations, ensuring crew safety and effective fire containment.", "Communicated effectively with team members and command staff to coordinate firefighting efforts.", "Maintained physical fitness and readiness to perform demanding tasks in challenging environments."],
-    image: "../images/firefighter.JPEG",
+    image: "../images/firefighter.jpeg",
   },
   {
     id: "2",
@@ -155,8 +155,8 @@ const jobs = [
     period: "2021 - 2021",
     description:
       "Directed crew members to safely and efficiently pack, load, and unload consumers belongings.",
-    skills: ["Leadership", "Clinic satisfacyion", "Logistics"],
+    skills: ["Leadership", "Client satisfaction", "Logistics"],
     responsibilities: ["Led a team of movers to ensure efficient and safe packing, loading, and unloading of customer belongings.", "Coordinated logistics and scheduling to optimize moving operations and customer satisfaction.", "Provided training and support to crew members to enhance performance and teamwork."],
-    image: "../images/AMS.JPEG",
+    image: "../images/AMS.jpeg",
   }
 ]

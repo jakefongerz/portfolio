@@ -98,7 +98,7 @@ export default function HomePage() {
               <TabsList className="grid w-full grid-cols-3 mb-8">
                 <TabsTrigger value="bio">About Me</TabsTrigger>
                 <TabsTrigger value="projects">Software Projects</TabsTrigger>
-                <TabsTrigger value="experience">Work Experience</TabsTrigger>
+                <TabsTrigger value="experience">Experience</TabsTrigger>
               </TabsList>
               {/* Bio Tab */}
               <TabsContent value="bio" className="space-y-6">
@@ -327,7 +327,7 @@ const jobs = [
     period: "2021 - 2021",
     description:
       "Directed crew members to safely and efficiently pack, load, and unload consumers\' belongings.",
-    skills: ["Leadership", "clinic satisfacyion", "WordPress"],
+    skills: ["Leadership", "client satisfaction", "WordPress"],
   }
 ]
 
