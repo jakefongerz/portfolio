@@ -1,4 +1,10 @@
+This website is actively deployed [here](https://jacobfonger.com)!
+
+## Understanding the project
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+This project started as a classroom project but has evolved to become my business website as a construction subcontractor.
 
 ## Getting Started
 
